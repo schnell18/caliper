@@ -9,10 +9,23 @@
     <wildcardResourcePatterns>
       <entry name="?*.caliperrc" />
     </wildcardResourcePatterns>
-    <annotationProcessing enabled="false" useClasspath="true" />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for caliper" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="caliper" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="caliper" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="MAXIMUM_HEAP_SIZE" value="800" />
   </component>
 </project>
-
