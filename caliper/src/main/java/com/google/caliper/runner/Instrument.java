@@ -152,9 +152,7 @@ public abstract class Instrument {
   static final ImmutableSet<String> JVM_ARGS = ImmutableSet.of(
       // do compilation serially
       "-Xbatch",
-      // make sure compilation doesn't run in parallel with itself
-      "-XX:CICompilerCount=1",
-      // ensure the parallel garbage collector
+     // ensure the parallel garbage collector
       "-XX:+UseParallelGC",
       // generate classes or don't, but do it immediately
       "-Dsun.reflect.inflationThreshold=0");
